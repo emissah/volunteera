@@ -5,8 +5,8 @@
     <meta charset="UTF-8">    
   </head>
   <body>
-    <header>
-      <h1>Volunteera</h1>
+  <header>
+      <h1><a href="<?=BASEURL?>">Volunteera</a></h1>
     </header>
     <section>
       <?=$this->section('content')?>
