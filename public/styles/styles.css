@@ -63,6 +63,14 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.tapahtumat > div > .nimi {
+    width: 33.33%
+}
+
+.tapahtumat > div > .aika {
+    width: 33.33%
+}
+
 .tapahtumat > div > div:nth-child(3) {
     text-align: right;
   }
