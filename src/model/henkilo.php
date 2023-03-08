@@ -8,7 +8,7 @@
   }
 
   function haeHenkiloSahkopostilla($email) {
-    return DB::run('SELECT * FROM henkilo WHERE email = ?;', [$email])->fetchAll();
+    return DB::run('SELECT * FROM henkilo1 WHERE email = ?;', [$email])->fetchAll();
   }
 
 
