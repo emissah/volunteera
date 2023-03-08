@@ -102,3 +102,9 @@
     min-width: 10rem;
     margin: 0.5rem auto;
   }
+
+  .error {
+    color: rgb(185, 0, 0);
+    font-size: 1.0rem;
+    font-weight: bold;
+  }
