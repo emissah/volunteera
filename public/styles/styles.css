@@ -57,6 +57,24 @@
     text-align: center;
     color: #020202;
   }
+
+  .tapahtumat {
+    background-color: #0e668b;
+    color: #fff;
+    border: #000000 solid 1px;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .tapahtumat a {
+
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .tapahtumat a:hover {
+    color: #4eb2fa;
+  }
   
   .tapahtumat > div {
   display: grid;
