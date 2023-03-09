@@ -7,7 +7,7 @@
   </head>
   <body>
   <header>
-      <h1><a href="<?=BASEURL?>">Volunteera</a></h1>
+      <h1><a href="<?=BASEURL?>">Volunteera.</a></h1>
       <div class="profile">
         <?php
           if (isset($_SESSION['user'])) {
@@ -20,12 +20,19 @@
       </div>
     </header>
 
+   <nav>
+   <a href="">Tapahtumat</a>
+   <a href="">Tietoa sivusta</a>
+   <a href="">Yhteystiedot</a>
+   <a href="">Palautelomake</a>
+  </nav>
+
     <section>
       <?=$this->section('content')?>
     </section>
     <footer>
       <hr>
-      <div>Volunteera by E. N</div>
+      <div>Volunteera by Emikki</div>
     </footer>
   </body>
 </html>
