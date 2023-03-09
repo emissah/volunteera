@@ -22,7 +22,14 @@
   header {
     background-color: #8baebd;
     padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.0rem;
+    font-weight: bold;
   }
+  
 
   header h1 {
     font-family: 'Fredoka One', cursive;
@@ -35,6 +42,11 @@
   header a {
     color: #000;
     text-decoration: none;
+  }
+
+  .profile a:hover {
+    color: #ffffff;
+
   }
 
   section {
@@ -144,4 +156,6 @@
   .info a:hover {
     color: #ffffff;
   }
+
+
   
