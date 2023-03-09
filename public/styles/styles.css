@@ -126,3 +126,22 @@
     font-size: 1.0rem;
     font-weight: bold;
   }
+
+  .info {
+    background-color: #8baebd;
+    border: 2px solid #0e668b;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+  }
+  
+  .info a {
+    color: #004da4;
+    text-decoration: none;
+  }
+
+  .info a:hover {
+    color: #ffffff;
+  }
+  
