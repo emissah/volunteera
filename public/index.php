@@ -1,6 +1,9 @@
 <?php
 // Suoritetaan projektin alustusskripti.
 require_once '../src/init.php';
+  // Aloitetaan istunnot.
+  session_start();
+
 
   // Siistitään polku urlin alusta ja mahdolliset parametrit urlin lopusta.
   // Siistimisen jälkeen osoite /~koodaaja/lanify/tapahtuma?id=1 on 
@@ -68,7 +71,8 @@ require_once '../src/init.php';
           if (isset($_POST['laheta'])) {
             require_once CONTROLLER_DIR . 'kirjaudu.php';
             if (tarkistaKirjautuminen($_POST['email'],$_POST['salasana'])) {
-              echo "Kirjautuminen ok!";
+              $_SESSION['user'] = $_POST['email'];
+              header("Location: " . $config['urls']['baseUrl']);    
             } else {
               echo $templates->render('kirjaudu', [ 'error' => ['virhe' => 'Väärä käyttäjätunnus tai salasana!']]);
             }
