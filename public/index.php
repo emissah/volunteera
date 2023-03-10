@@ -96,13 +96,37 @@ require_once '../src/init.php';
           } else {
             echo $templates->render('kirjaudu', [ 'error' => []]);
           }
-          break; 
-          
+          break;
           case "/logout":
             require_once CONTROLLER_DIR . 'kirjaudu.php';
             logout();
             header("Location: " . $config['urls']['baseUrl']);
             break;
+
+            case '/ilmoittaudu':
+              if ($_GET['id']) {
+                require_once MODEL_DIR . 'ilmoittautuminen.php';
+                $idtapahtuma = $_GET['id'];
+                if ($loggeduser) {
+                  lisaaIlmoittautuminen($loggeduser['idhenkilo'],$idtapahtuma);
+                }
+                header("Location: tapahtuma?id=$idtapahtuma");
+              } else {
+                header("Location: tapahtumat");
+              }
+              break;
+              case '/peru':
+                if ($_GET['id']) {
+                  require_once MODEL_DIR . 'ilmoittautuminen.php';
+                  $idtapahtuma = $_GET['id'];
+                  if ($loggeduser) {
+                    poistaIlmoittautuminen($loggeduser['idhenkilo'],$idtapahtuma);
+                  }
+                  header("Location: tapahtuma?id=$idtapahtuma");
+                } else {
+                  header("Location: tapahtumat");  
+                }
+                break;                
       
     default:
       echo $templates->render('notfound');
