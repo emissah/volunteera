@@ -15,6 +15,13 @@
     return DB::run('SELECT * FROM henkilo1 WHERE email = ?;', [$email])->fetch();
   }
 
+  function paivitaVahvavain($email,$avain) {
+    return DB::run('UPDATE henkilo SET vahvavain = ? WHERE email = ?', [$avain,$email])->rowCount();
+  }
+
+  function vahvistaTili($avain) {
+    return DB::run('UPDATE henkilo SET vahvistettu = TRUE WHERE vahvavain = ?', [$avain])->rowCount();
+  }
 
 
 ?>
