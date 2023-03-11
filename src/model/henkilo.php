@@ -16,12 +16,11 @@
   }
 
   function paivitaVahvavain($email,$avain) {
-    return DB::run('UPDATE henkilo SET vahvavain = ? WHERE email = ?', [$avain,$email])->rowCount();
+    return DB::run('UPDATE henkilo1 SET vahvavain = ? WHERE email = ?', [$avain,$email])->rowCount();
   }
 
   function vahvistaTili($avain) {
-    return DB::run('UPDATE henkilo SET vahvistettu = TRUE WHERE vahvavain = ?', [$avain])->rowCount();
+    return DB::run('UPDATE henkilo1 SET vahvistettu = TRUE WHERE vahvavain = ?', [$avain])->rowCount();
   }
-
 
 ?>
