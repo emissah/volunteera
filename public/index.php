@@ -1,4 +1,5 @@
 <?php
+
   // Aloitetaan istunnot.
   session_start();
 
@@ -101,35 +102,47 @@
         header("Location: " . $config['urls']['baseUrl']);
       }
       break;
-      case "/kirjaudu":
-        if (isset($_POST['laheta'])) {
-          require_once CONTROLLER_DIR . 'kirjaudu.php';
-          if (tarkistaKirjautuminen($_POST['email'],$_POST['salasana'])) {
-            require_once MODEL_DIR . 'henkilo.php';
-            $user = haeHenkilo($_POST['email']);
-            if ($user['vahvistettu']) {
-              session_regenerate_id();
-              $_SESSION['user'] = $user['email'];
-              header("Location: " . $config['urls']['baseUrl']);
-            } else {
-              echo $templates->render('kirjaudu', [ 'error' => ['virhe' => 'Tili on vahvistamatta! Ole hyvä, ja vahvista tili sähköpostissa olevalla linkillä.']]);
-            }
+    case "/kirjaudu":
+      if (isset($_POST['laheta'])) {
+        require_once CONTROLLER_DIR . 'kirjaudu.php';
+        if (tarkistaKirjautuminen($_POST['email'],$_POST['salasana'])) {
+          require_once MODEL_DIR . 'henkilo.php';
+          $user = haeHenkilo($_POST['email']);
+          if ($user['vahvistettu']) {
+            session_regenerate_id();
+            $_SESSION['user'] = $user['email'];
+            header("Location: " . $config['urls']['baseUrl']);
           } else {
-            echo $templates->render('kirjaudu', [ 'error' => ['virhe' => 'Väärä käyttäjätunnus tai salasana!']]);
+            echo $templates->render('kirjaudu', [ 'error' => ['virhe' => 'Tili on vahvistamatta! Ole hyvä, ja vahvista tili sähköpostissa olevalla linkillä.']]);
           }
         } else {
-          echo $templates->render('kirjaudu', [ 'error' => []]);
+          echo $templates->render('kirjaudu', [ 'error' => ['virhe' => 'Väärä käyttäjätunnus tai salasana!']]);
         }
-        break;  
+      } else {
+        echo $templates->render('kirjaudu', [ 'error' => []]);
+      }
+      break;
     case "/logout":
       require_once CONTROLLER_DIR . 'kirjaudu.php';
       logout();
       header("Location: " . $config['urls']['baseUrl']);
       break;
+      case "/tilaa_vaihtoavain":
+        $formdata = cleanArrayData($_POST);
+        // Tarkistetaan, onko lomakkeelta lähetetty tietoa.
+        if (isset($formdata['laheta'])) {    
+    
+          // TODO vaihtoavaimen tilauskäsittely
+    
+        } else {
+          // Lomakeelta ei ole lähetetty tietoa, tulostetaan lomake.
+          echo $templates->render('tilaa_vaihtoavain_lomake');
+        }
+        break;
+  
     default:
       echo $templates->render('notfound');
   }
-
   // ENTINEN EHTORAKENNE ! 
   // if ($request === '/' || $request === '/tapahtumat') {
   //   require_once MODEL_DIR . 'tapahtuma.php';
