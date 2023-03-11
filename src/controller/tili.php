@@ -141,17 +141,17 @@ function lisaaTili($formdata, $baseurl='') {
 
 function lahetaVahvavain($email,$url) {
   $message = "Hei!\n\n" . 
-             "Olet rekisteröitynyt Lanify-palveluun tällä\n" . 
+             "Olet rekisteröitynyt Volunteera-palveluun tällä\n" . 
              "sähköpostiosoitteella. Klikkaamalla alla olevaa\n" . 
              "linkkiä vahvistat käyttämäsi sähköpostiosoitteen\n" .
-             "ja pääset käyttämään Lanify-palvelua.\n\n" . 
+             "ja pääset käyttämään Volunteera-palvelua.\n\n" . 
              "$url\n\n" .
-             "Jos et ole rekisteröitynyt Lanify palveluun, niin\n" . 
+             "Jos et ole rekisteröitynyt Volunteera-palveluun, niin\n" . 
              "silloin tämä sähköposti on tullut sinulle\n" .
              "vahingossa. Siinä tapauksessa ole hyvä ja\n" .
              "poista tämä viesti.\n\n".
-             "Terveisin, Lanify-palvelu";
-  return mail($email,'Lanify-tilin aktivointilinkki',$message);
+             "Terveisin,Volunteera-palvelu";
+  return mail($email,'Volunteera-tilin aktivointilinkki',$message);
 }
 
 ?>
