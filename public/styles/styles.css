@@ -160,7 +160,7 @@
 
 nav {  
   background-color: #5f757e;
-  color:#000;
+  color:#ffffff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -169,7 +169,7 @@ nav {
 }
 
 nav a {
-  color:#000;
+  color:#ffffff;
   text-decoration: none;
 }
 
@@ -224,3 +224,40 @@ input[type=submit], .button {
   color: #020202;
   margin: 2rem auto;
 }
+
+.etusivukuva img {
+  border: 1px solid black;
+  margin: 1rem auto;
+}
+
+.palautelomake label {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+ }
+
+.palautelomake input[type=text], input[type=email], textarea {
+  border: 1px solid #0e668b;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  font-size: 1rem;
+  
+}
+
+.palautelomake #button {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+
+}
+
+.vieraskirja {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.vieraskirja hr {
+  margin: 1rem 0rem 1rem 0rem;
+}
+

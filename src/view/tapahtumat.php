@@ -1,7 +1,8 @@
 <?php $this->layout('template', ['title' => 'Tulevat tapahtumat']) ?>
-
 <h1>Tulevat tapahtumat</h1>
-
+<div class="etusivukuva">
+<img src="images/etusivukuva.jpg" height="200" width="132">
+</div>
 <div class='tapahtumat'>
 <?php
 

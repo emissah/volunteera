@@ -15,6 +15,8 @@
     return DB::run('SELECT * FROM henkilo1 WHERE email = ?;', [$email])->fetch();
   }
 
+  // Pohdinta, miten saisi haettua jonkun käyttäjän nimitiedon nimen ja emailin avulla. 
+
   function paivitaVahvavain($email,$avain) {
     return DB::run('UPDATE henkilo1 SET vahvavain = ? WHERE email = ?', [$avain,$email])->rowCount();
   }

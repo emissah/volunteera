@@ -1,5 +1,3 @@
-
-
 <?php
 
 function lisaaTili($formdata, $baseurl='') {
@@ -150,23 +148,20 @@ function lahetaVahvavain($email,$url) {
              "silloin tämä sähköposti on tullut sinulle\n" .
              "vahingossa. Siinä tapauksessa ole hyvä ja\n" .
              "poista tämä viesti.\n\n".
-             "Terveisin,Volunteera-palvelu";
+             "Terveisin, Volunteera";
   return mail($email,'Volunteera-tilin aktivointilinkki',$message);
 }
 
 function lahetaVaihtoavain($email,$url) {
-  $message = "Hei!\n\n" . 
-             "Olet rekisteröitynyt Volunteera-palveluun tällä\n" . 
-             "sähköpostiosoitteella. Klikkaamalla alla olevaa\n" . 
-             "linkkiä vahvistat käyttämäsi sähköpostiosoitteen\n" .
-             "ja pääset käyttämään Volunteera-palvelua.\n\n" . 
+  $message = "Hei!\n\n" .
+             "Olet pyytänyt tilisi salasanan vaihtoa, klikkaamalla\n" .
+             "alla olevaa linkkiä pääset vaihtamaan salasanasi.\n" .
+             "Linkki on voimassa 30 minuuttia.\n\n" .
              "$url\n\n" .
-             "Jos et ole rekisteröitynyt Volunteera-palveluun, niin\n" . 
-             "silloin tämä sähköposti on tullut sinulle\n" .
-             "vahingossa. Siinä tapauksessa ole hyvä ja\n" .
-             "poista tämä viesti.\n\n".
-             "Terveisin,Volunteera-palvelu";
-  return mail($email,'Volunteera-tilin aktivointilinkki',$message);
+             "Jos et ole pyytänyt tilisi salasanan vaihtoa, niin\n" .
+             "voit poistaa tämän viestin turvallisesti.\n\n" .
+             "Terveisin, Volunteera";
+  return mail($email,'Volunteera-tilin salasanan vaihtaminen',$message);
 }
 
 function luoVaihtoavain($email, $baseurl='') {

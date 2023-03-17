@@ -36,7 +36,9 @@
     case '/tapahtuma':
       require_once MODEL_DIR . 'tapahtuma.php';
       require_once MODEL_DIR . 'ilmoittautuminen.php';
-      $tapahtuma = haeTapahtuma($_GET['id']);
+      $tapahtuma = haeTapahtuma($_GET['id']); // Miten saisi /tapahtuma sivulla undefinedin piilotettua?
+      //$id = isset($GET["id"]) ? $GET["id"] : "";
+      //$tapahtuma = haeTapahtuma($id);
       if ($tapahtuma) {
         if ($loggeduser) {
           $ilmoittautuminen = haeIlmoittautuminen($loggeduser['idhenkilo'],$tapahtuma['idtapahtuma']);
@@ -206,7 +208,19 @@
             break;
           }
     
-          break;    
+          break; 
+    case "/tietoa":
+      echo $templates->render('tietoa');
+      break;
+      case "/yhteystiedot":
+      echo $templates->render('yhteystiedot');
+      break;
+      case "/palaute":
+      echo $templates->render('palaute');
+      break;
+      case "/vieraskirja":
+        echo $templates->render('vieraskirja');
+        break;
     default:
       echo $templates->render('notfound');
   }

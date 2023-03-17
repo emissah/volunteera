@@ -26,6 +26,7 @@
    <a href="tietoa">Tietoa sivusta</a>
    <a href="yhteystiedot">Yhteystiedot</a>
    <a href="palaute">Palautelomake</a>
+   <a href="vieraskirja">Vieraskirja</a>
   </nav>
 
     <section>
